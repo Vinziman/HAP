@@ -1,0 +1,172 @@
+<html>
+	<head>
+		<link rel="SHORTCUT ICON" href="Icone\icon.png"/>
+		<title>StreamLet'sGo</title>
+		<style type="text/css">
+			body{
+				width:98%;
+				height:98%;
+				background:linear-gradient(to bottom,green,forestgreen,greenyellow);
+				font-family:Consolas;
+			}
+			.testa{
+				margin-top:10px;
+				margin-left:18px;
+				height:100px;
+				background:rgba(0,0,0,.58);
+			}
+				#logo{
+					margin-left:15px;
+				}
+				#cerca{
+					width:310px;
+					height:120px;
+					margin-top:-70px;
+					margin-left:87%;
+				}
+					#forma{
+						width:200px;
+						height:30px;
+					}
+					#bottone{
+						width:60px;
+						height:40px;
+						border-radius:10px/30px;
+					}
+			.corpo{
+				height:70%;
+				margin-left:18px;
+				margin-top:10px;
+			}
+				#link{
+					width:100%;
+					height:70px;
+					margin-left:8%;
+					margin-top:10px;
+				}
+				ul{
+					list-style-type:none;
+				}
+				#link li{
+					display:block;
+					float:left;
+					width:120px;
+					height:50px;
+					line-height:50px;
+					border-bottom:4px solid #000;
+					border-right:2px solid #000;
+					border-top:2px solid #000;
+					border-left:2px solid #000;
+					background:rgba(0,0,0,.3);
+					}
+				#link li:hover{
+					cursor:pointer;
+					background:-webkit-radial-gradient(center, ellipse cover,#00ff00 0%,#1Fff05 100%);
+				}
+				.primo{
+					border-top-left-radius:10px;
+					border-bottom-left-radius:10px;
+				}
+				.ultimo{
+					border-top-right-radius:10px;
+					border-bottom-right-radius:10px;
+				}
+				a{
+					text-decoration:none;
+				}
+				.space{
+				background:rgba(0,0,0,.58);
+				height:110%;
+				width:100%;
+				margin-top:15px;
+				}
+				#film{
+					height:40%;
+					margin-top:20px;
+					}
+				#film img{
+					margin-top:70px;
+					margin-left:60px;
+					box-shadow:13px 10px 13px rgba(0,0,0, 85);
+					width:200px;
+					height:200px;
+				}
+				
+		</style>
+	</head>
+	<body vlink="white" link="white" alink="white">
+		<div class="testa">
+			<div id="logo">
+				<img src="Icone\logo.png"/>
+			</div>
+			<div id="cerca">
+				<form action="Cerca.php" method="Get">
+					<input type="text" name="Ricerca" name="Ricerca" id="forma" placeholder="Cerca"/>
+					
+					<input type="hidden" id="bottone" value="Cerca"/>
+				</form>
+			</div>
+		</div>
+		<div class="corpo">
+			<center>
+				<div id="link">
+					<ul>
+						<a href="Stream.html"><li class="primo">Home</li></a>
+						<a href="Menu\Lista.php"><li>Lista A-Z</li></a>
+						<a href="Menu\Cinema.php"><li>Cinema</li></a>
+						<a href="Menu\Animazione.php"><li>Animazione</li></a>
+						<a href="Menu\Avventura.php"><li>Avventura</li></a>
+						<a href="Menu\Azione.php"><li>Azione</li></a>
+						<a href="Menu\Commedia.php"><li>Commedia</li></a>
+						<a href="Menu\Crimine.php"><li>Crimine</li></a>
+						<a href="Menu\Drammatico.php"><li>Drammatico</li></a>
+						<a href="Menu\Fantascienza.php"><li>Fantascienza</li></a>
+						<a href="Menu\Romantico.php"><li>Romantico</li></a>
+						<a href="Menu\Sportivo.php"><li>Sportivo</li></a>
+						<a href="Menu\Attori.php"><li class="ultimo">Attori</li></a>
+					</ul>
+				</div>
+			</center>
+			<div class="space">
+				<div id="film">
+				<center>
+						<a href="Html\Tokyo Ghoul.html">
+							<img src="copertina\ghoul.png"/>
+						</a>
+						<a href="Html\Logan.html">
+							<img src="copertina\logan.jpg"/>
+						</a>
+						<a href="Html\Baywatch.html">
+							<img src="copertina\Baywatch.jpg"/>
+						</a>
+						<a href="Html\Doctor Strange.html">
+							<img src="copertina\doctor.jpg"/>
+						</a>
+						<a href="Html\Assassinio sull'Orient Express.html">
+							<img src="copertina\Assassinio sull'Orient Express.jpg"/>
+						</a>
+				</center>
+				</div>
+					<div id="film">
+				<center>
+						<a href="Html\Una spia e mezzo.html">
+							<img src="copertina\spia.jpg"/>
+						</a>
+						<a href="Html\Justice League.html">
+							<img src="copertina\justice.jpg"/>
+						</a>
+						<a href="Html\Pelé.html">
+							<img src="copertina\pele.jpg"/>
+						</a>
+						<a href="Html\Ready Player One.html">
+							<img src="copertina\ready.jpg"/>
+						</a>
+						<a href="Html\Guardiani della Galassia Vol.2.html">
+							<img src="copertina\guardiani.jpg"/>
+						</a>
+					</center>
+				</div>
+				</div>
+			</div>
+	</body>
+</html>

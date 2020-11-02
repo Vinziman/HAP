@@ -1,0 +1,91 @@
+body{
+	background-repeat: no-repeat;
+	background-size:cover;
+	background-attachment: fixed;
+	background:linear-gradient(to left,rgba(0,196,204),white);
+	font-family:arial;
+	height:95%;
+}
+.area_notifiche{
+	position:absolute;
+	right:0;
+	top:150px;
+	border-top-left-radius:10px;
+	width:1200px;
+	height:100%;
+	/* margin-left:150px; */
+	background:white;
+	box-shadow:0 0 -10px  rgba(0,0,0,1);
+}
+input[type="text"]{
+	position:absolute;
+	top:50px;
+	left:30.5%;
+	right:30.5%;
+	border-top-right-radius:10px;
+	border-bottom-right-radius:10px;
+	border-top-left-radius:10px;
+	border-bottom-left-radius:10px;
+	border-color:rgba(192,192,192);
+	font-size:17;
+	width:600px;
+	height:45px;
+	box-shadow:0 0 10px  rgba(0,0,0,1);
+}
+#title{
+	position:absolute;
+	right:35px;
+	top:35px;
+	font-size:65;
+	font-weight: bold;
+	color:rgba(255,255,255);
+	text-shadow:0 0 10px  rgba(0,0,0,1);
+}
+#profilo{
+	position:absolute;
+	width:200px;
+	height:130px;
+}
+#profilo img{
+	position:absolute;
+	top:25px;
+	left:60px;
+	width:90px;
+	height:90px;
+	border-top-right-radius:10px;
+	border-bottom-right-radius:10px;
+	border-top-left-radius:10px;
+	border-bottom-left-radius:10px;
+}
+#info{
+	position:absolute;
+	top:50px;
+	left:170px;
+	font-size:20;
+}
+#bottone_medico{
+	position:absolute;
+	left:25px;
+	top:180px;
+	width:270px;
+	height:30px;
+	border: 2px solid;
+	border-top-right-radius:10px;
+	border-bottom-right-radius:10px;
+	border-top-left-radius:10px;
+	border-bottom-left-radius:10px;
+}
+#bottone_scrivi{
+	position:absolute;
+	left:80px;
+	top:250px;
+	width:150px;
+	height:30px;
+	border: 2px solid;
+	border-top-right-radius:10px;
+	border-bottom-right-radius:10px;
+	border-top-left-radius:10px;
+	border-bottom-left-radius:10px;
+}
+#icone{}
+#bottone
