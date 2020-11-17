@@ -1,10 +1,10 @@
 body{
-	background-repeat: no-repeat;
+	/* background-repeat: no-repeat; */
 	background-size:cover;
-	background-attachment: fixed;
+	/* background-attachment: fixed; */
 	background:linear-gradient(to left,rgba(0,196,204),white);
 	font-family:arial;
-	height:95%;
+	height:700px;
 }
 .area_notifiche{
 	position:absolute;
@@ -12,7 +12,8 @@ body{
 	top:150px;
 	border-top-left-radius:10px;
 	width:1200px;
-	height:100%;
+	/* height:580px; */
+	bottom:0;
 	/* margin-left:150px; */
 	background:white;
 	box-shadow:0 0 -10px  rgba(0,0,0,1);
@@ -63,22 +64,10 @@ input[type="text"]{
 	left:170px;
 	font-size:20;
 }
-#bottone_medico{
-	position:absolute;
-	left:25px;
-	top:180px;
-	width:270px;
-	height:30px;
-	border: 2px solid;
-	border-top-right-radius:10px;
-	border-bottom-right-radius:10px;
-	border-top-left-radius:10px;
-	border-bottom-left-radius:10px;
-}
 #bottone_scrivi{
 	position:absolute;
-	left:80px;
-	top:250px;
+	left:90px;
+	top:160px;
 	width:150px;
 	height:30px;
 	border: 2px solid;
@@ -88,5 +77,31 @@ input[type="text"]{
 	border-bottom-left-radius:10px;
 	
 }
-#icone{}
-#bottone
+#icone{
+	position:absolute;
+	top:240px;
+	left:105px;
+	width:120px;
+	height:520px;
+}
+#icone img{
+	width:120px;
+	height:90px;
+}
+#sezione{
+	position:absolute;
+	background-color:#FFF380;
+	border-top-left-radius:10px;
+	top:0;
+	height:40px;
+	left:0;
+	right:0;
+}
+#bacheca{
+	position:absolute;
+	overflow-y:scroll;
+	top:40px;
+	left:0;
+	width:1200px;
+	bottom:0;
+}
