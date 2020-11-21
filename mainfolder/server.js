@@ -13,3 +13,10 @@ app.listen(5000, () => {
 app.get("/", (req, res) => {
   res.send("Helloo from the server");
 });
+
+//API news -> manda al client la lista delle news
+app.get("/news", (req, res) => {
+  //caricamento news dal database
+
+  res.json(newsFeed);
+});
