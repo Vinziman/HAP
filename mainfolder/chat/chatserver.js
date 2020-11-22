@@ -14,7 +14,6 @@ io.on("connection", (socket) => {
   });
   console.log("New user in the chat.");
   socket.on("send-chat-message", (message) => {
-    console.log(message);
     socket.broadcast.emit("chat-message", message);
   });
 });

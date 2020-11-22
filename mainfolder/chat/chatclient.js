@@ -13,15 +13,15 @@ socket.on("user-connected", (user) => {
 
 socket.on("chat-message", (message) => {
   //socket.on(eventname, function)
-  appendMessage(message);
+  appendMessage(`${message.user}: ${message.text}`);
 });
 
 messageForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  const message = messageInput.value;
-  socket.emit("send-chat-message", message);
+  const messageText = messageInput.value;
+  socket.emit("send-chat-message", { user: name, text: messageText });
   messageInput.value = "";
-  appendMessage(message);
+  appendMessage(`You: ${messageText}`);
 });
 
 function appendMessage(message) {
