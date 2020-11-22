@@ -79,7 +79,7 @@ input[type="text"]{
 }
 #icone{
 	position:absolute;
-	top:240px;
+	top:200px;
 	left:105px;
 	width:120px;
 	height:520px;
@@ -90,7 +90,6 @@ input[type="text"]{
 }
 #sezione{
 	position:absolute;
-	background-color:#FFF380;
 	border-top-left-radius:10px;
 	top:0;
 	height:40px;
