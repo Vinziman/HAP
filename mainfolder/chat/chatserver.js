@@ -12,8 +12,11 @@ io.on("connection", (socket) => {
     users[socket.id] = user;
     socket.broadcast.emit("user-connected", user); // il primo argomento è il nome dell'evento
   });
-  console.log("New user in the chat.");
   socket.on("send-chat-message", (message) => {
     socket.broadcast.emit("chat-message", message);
+  });
+  socket.on("disconnect", () => {
+    socket.broadcast.emit("user-disconnected", users[socket.id]); // il primo argomento è il nome dell'evento
+    delete users[socket.id];
   });
 });

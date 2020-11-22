@@ -4,11 +4,14 @@ const messageInput = document.getElementById("messageInput");
 const messageContainer = document.getElementById("messageContainer");
 
 const name = prompt("What is your name? ");
-appendMessage("You joined the chat.");
+appendMessage("You joined.");
 socket.emit("new-user", name);
 
 socket.on("user-connected", (user) => {
   appendMessage(`${user} joined the chat.`);
+});
+socket.on("user-disconnected", (user) => {
+  appendMessage(`${user} leaved.`);
 });
 
 socket.on("chat-message", (message) => {
