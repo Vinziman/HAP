@@ -1,6 +1,6 @@
 console.log("Leggi le news !");
 
-const newsElement = document.querySelector("aggiungiNews");
+const newsContainerElement = document.querySelector(".newsContainer");
 const form = document.querySelector("form"); // grabbing an element on the page
 const errorElement = document.querySelector(".error-message");
 
@@ -77,16 +77,16 @@ function listAllNews(reset = true) {
   }
   fetch(getNewsAPI_URL) //`${}?skip=${skip}&limit=${limit}`
     .then((response) => response.json())
-    .then((result) => {
-      console.log(result.news);
-      result.news.forEach((comunicazione) => {
+    .then((listaComunicazioni) => {
+      console.log(listaComunicazioni);
+      listaComunicazioni.forEach((comunicazione) => {
         const div = document.createElement("div");
 
         const header = document.createElement("h3");
-        header.textContent = comunicazione.name;
+        header.textContent = comunicazione.titolo;
 
         const contents = document.createElement("p");
-        contents.textContent = comunicazione.content;
+        contents.textContent = comunicazione.testo;
 
         const date = document.createElement("small");
         date.textContent = new Date(comunicazione.data);
@@ -95,15 +95,15 @@ function listAllNews(reset = true) {
         div.appendChild(contents);
         div.appendChild(date);
 
-        newsElement.appendChild(div);
+        newsContainerElement.appendChild(div);
       });
-      loadingElement.style.display = "none";
+      /*loadingElement.style.display = "none";
       if (!result.meta.has_more) {
         loadMoreElement.style.visibility = "hidden";
         finished = true;
       } else {
         loadMoreElement.style.visibility = "visible";
-      }
+      }*/
       loading = false;
     });
 }

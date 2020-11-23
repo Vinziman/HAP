@@ -1,4 +1,4 @@
-const Comunicazione = require("./src/Comunicazione");
+//const Comunicazione = require("./src/Comunicazione");
 const express = require("express");
 const cors = require("cors");
 const monk = require("monk");
@@ -6,10 +6,9 @@ const monk = require("monk");
 
 const app = express();
 
-const db = monk(process.env.MONGO_URI || "localhost:27017");
-const newsFeed = db.get("HAP-comunicazioni");
+const db = monk(process.env.MONGO_URI || "localhost:27017/HAP");
+const newsFeed = db.get("comunicazioni");
 //const filter = new Filter();
-
 app.enable("trust proxy");
 
 app.use(cors());
@@ -30,7 +29,7 @@ app.get("/news", (req, res, next) => {
     .find()
     .then((news) => {
       console.log(news);
-      res.json(news);
+      res.json(news); //NON FUNZIONA
     })
     .catch(next);
 });
