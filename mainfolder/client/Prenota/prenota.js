@@ -1,4 +1,4 @@
-import Data from "./data.js";
+import Data from "../../src/Data.js";
 
 const orariDisponibiliContainerElement = document.getElementById(
   "orariDisponibiliContainer"
@@ -6,11 +6,11 @@ const orariDisponibiliContainerElement = document.getElementById(
 
 document.addEventListener("readystatechange", (event) => {
   if (event.target.readyState === "complete") {
-    initApp();
+    initPage();
   }
 });
 
-const initApp = () => {
+const initPage = () => {
   //richiamo gli oggetti da document
   const prenotaDateElement = document.getElementById("prenotaDate");
   const formElement = document.querySelector("form");
