@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prenota una visita</title>
+  </head>
+  <body>
+    <main>
+      <form id="prenotaForm">
+        <label for="prenotaDate" id="prenotaLabel">Data</label>
+        <input type="date" id="prenotaDate" />
+        <div id="orariDisponibiliContainer"></div>
+        <input type="text" id="motivazioniInput" placeholder="Motivazioni" />
+        <button id="sendButton">Prenota</button>
+      </form>
+    </main>
+    <script src="./prenota.js" type="module"></script>
+  </body>
+</html>
