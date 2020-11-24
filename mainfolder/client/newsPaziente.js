@@ -22,7 +22,7 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   const formData = new FormData(form);
   const cerca = formData.get("cerca");
-  fetch(getNewsAPI_URL)
+  fetch(`${getNewsAPI_URL}?search="${cerca}&skip=${skip}&limit=${limit}"`)
     .then((response) => {
       //aggiustare il resto della funzione
       if (!response.ok) {
@@ -35,7 +35,7 @@ form.addEventListener("submit", (event) => {
       }
     })
     .then(() => {
-      form.reset();
+      //form.reset();
       setTimeout(() => {
         form.style.display = "";
       }, 2000);

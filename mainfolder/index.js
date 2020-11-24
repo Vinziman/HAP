@@ -36,10 +36,14 @@ app.get("/news", (req, res, next) => {
     .catch(next);
 });*/
 
+function escapeRegex(text) {
+  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+}//evita regExp DDoS attack
+
 app.get("/news", (req, res, next) => {
-  //let skip = Number(req.query.skip) || 0;
-  //let limit = Number(req.query.limit) || 10;
-  let { skip = 0, limit = 5, sort = "desc" } = req.query; //acquisisto i valori passati come parametri tramite res.query
+  let { search = "", skip = 0, limit = 5, sort = "desc" } = req.query; //acquisisto i valori passati come parametri tramite res.query
+  const regex = new RegExp(escapeRegex(search), "gi");
+
   skip = parseInt(skip) || 0;
   limit = parseInt(limit) || 5;
 
@@ -50,7 +54,9 @@ app.get("/news", (req, res, next) => {
     //uso una promise per fare entrambe le query insieme
     newsFeed.count(),
     newsFeed.find(
-      {}, //query
+      {
+        $or: [{ titolo: regex }, { testo: regex }], //NON FUNZIONA LA RICERCA
+      },
       {
         skip,
         limit,
@@ -61,6 +67,7 @@ app.get("/news", (req, res, next) => {
     ),
   ])
     .then(([total, news]) => {
+      console.log(news);
       res.json({
         //risposta al server
         news,
@@ -114,6 +121,7 @@ app.post("/news", createNews);
 //app.post("/v2/news", createNews);
 
 app.use((error, req, res, next) => {
+  console.log('Error: '+error.message);
   res.status(500);
   res.json({
     message: error.message,
