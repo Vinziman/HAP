@@ -1,6 +1,6 @@
-export default class Comunicazione {
-  constructor(id, titolo, testo) {
-    this.id = id;
+class Comunicazione {
+  constructor(titolo, testo) {
+    //this.id = id;
     this.titolo = titolo;
     this.testo = testo;
     this.dataCreazione = new Date();
@@ -28,5 +28,12 @@ export default class Comunicazione {
   }
   setData(data) {
     this.data = data;
+  }
+  exportObject() {
+    return {
+      titolo: this.titolo,
+      testo: this.testo,
+      data: this.data,
+    };
   }
 }

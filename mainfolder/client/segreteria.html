@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Healt Assistant Program - Segreteria News</title>
+    <link rel="icon" href="../img/logo.png" type="image/png" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1 class="title">HAP - Segreteria</h1>
+    </header>
+    <main>
+      <div class="newsFeed">
+        <form id="aggiungiNews">
+          <div class="error-message"></div>
+          <p><input name="titolo" placeholder="Titolo" /></p>
+          <p><input name="testo" placeholder="Testo" /></p>
+          <button>Aggiungi notizia</button>
+        </form>
+        <div class="newsContainer"></div>
+        <div class="button-container">
+          <p id="loadMore">Loading...</p>
+        </div>
+      </div>
+    </main>
+    <script src="newsSegreteria.js"></script>
+  </body>
+</html>

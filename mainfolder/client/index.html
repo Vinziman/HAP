@@ -3,20 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Healt Assistant Program</title>
-    <link rel="stylesheet" href="../img/logo.png" />
-    <script src="./client.js"></script>
+    <title>Healt Assistant Program - News</title>
+    <link rel="icon" href="../img/logo.png" type="image/png" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
+
   <body>
     <header>
-      <h1 class="title">HAP</h1>
+      <h1 class="title">HAP - News</h1>
+      <form id="cercaNewsForm">
+        <div class="error-message"></div>
+        <input
+          type="text"
+          id="cercaInput"
+          placeholder="Cerca notizia"
+          name="cerca"
+        />
+        <button type="submit" id="cercaButton">Cerca</button>
+      </form>
     </header>
     <main>
-      <div class="newsFeed">
-        <form class="ricercaNews">form ricerca nelle news</form>
-        <div class="newsContainer">Qui vanno le notizie</div>
-        <div class="newsTitle"><h1>Titolo</h1></div>
+      <div class="newsContainer"></div>
+      <div class="button-container">
+        <p id="loadMore">Loading...</p>
       </div>
     </main>
+    <script src="newsPaziente.js"></script>
   </body>
 </html>
