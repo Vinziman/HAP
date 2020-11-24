@@ -46,9 +46,10 @@ const submitProcedure = () => {
 const caricaOrariDisponibili = (data) => {
   const orari = acquisisciOrariDisponibili(data);
   console.log(orari);
-  const orarioDisponibileElement = document.createElement("div");
+  
   orari.forEach((item) => {
     //element
+    const orarioDisponibileElement = document.createElement("option");
     orarioDisponibileElement.innerHTML = item;
     orariDisponibiliContainerElement.appendChild(orarioDisponibileElement);
   });

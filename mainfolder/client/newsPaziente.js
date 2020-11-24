@@ -1,5 +1,6 @@
 const newsContainerElement = document.querySelector(".newsContainer");
 const form = document.querySelector("#cercaNewsForm");
+const searchInput=document.querySelector("#cercaInput");
 const errorElement = document.querySelector(".error-message");
 const loadMoreElement = document.querySelector("#loadMore");
 const getNewsAPI_URL = "http://localhost:5000/news";
@@ -8,6 +9,19 @@ let skip = 0;
 let limit = 5;
 let loading = false;
 let finished = false;
+let search='';
+
+document.addEventListener("readystatechange", (event) => {
+  if (event.target.readyState === "complete") {
+    initPage();
+  }
+});
+
+const initPage=()=>{
+  form.reset();
+  listAllNews();
+}
+
 
 document.addEventListener("scroll", () => {
   const rect = loadMoreElement.getBoundingClientRect();
@@ -16,36 +30,11 @@ document.addEventListener("scroll", () => {
   }
 });
 
-listAllNews();
+
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  const formData = new FormData(form);
-  const cerca = formData.get("cerca");
-  fetch(`${getNewsAPI_URL}?search="${cerca}&skip=${skip}&limit=${limit}"`)
-    .then((response) => {
-      //aggiustare il resto della funzione
-      if (!response.ok) {
-        const contentType = response.headers.get("content-type");
-        if (contentType.includes("json")) {
-          return response.json().then((error) => Promise.reject(error.message));
-        } else {
-          return response.text().then((message) => Promise.reject(message));
-        }
-      }
-    })
-    .then(() => {
-      //form.reset();
-      setTimeout(() => {
-        form.style.display = "";
-      }, 2000);
-    })
-    .catch((errorMessage) => {
-      form.style.display = "";
-      errorElement.textContent = errorMessage;
-      errorElement.style.display = "";
-      //loadingElement.style.display = "none";
-    });
+  listAllNews();
 });
 
 function loadMore() {
@@ -54,12 +43,14 @@ function loadMore() {
 }
 
 function listAllNews(reset = true) {
-  loading = true;
+  //loading = true;
   if (reset) {
     skip = 0;
     finished = false;
+    search = searchInput.value;
+    newsContainerElement.innerHTML='';
   }
-  fetch(`${getNewsAPI_URL}?skip=${skip}&limit=${limit}`)
+  fetch(`${getNewsAPI_URL}?search=${search}&skip=${skip}&limit=${limit}`)
     .then((response) => response.json())
     .then((listaComunicazioni) => {
       listaComunicazioni.news.forEach((comunicazione) => {
@@ -87,6 +78,6 @@ function listAllNews(reset = true) {
       } else {
         loadMoreElement.style.visibility = "visible";
       }
-      loading = false;
+      //loading = false;
     });
 }

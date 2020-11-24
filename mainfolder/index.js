@@ -2,13 +2,11 @@
 const express = require("express");
 const cors = require("cors");
 const monk = require("monk");
-//const Filter = require("bad-words");
 
 const app = express();
 
 const db = monk(process.env.MONGO_URI || "localhost:27017/HAP");
 const newsFeed = db.get("comunicazioni");
-//const filter = new Filter();
 app.enable("trust proxy");
 
 app.use(cors());
@@ -24,17 +22,6 @@ app.get("/", (req, res) => {
   });
 });
 
-/*
-getNews v1
-app.get("/news", (req, res, next) => {
-  newsFeed
-    .find()
-    .then((news) => {
-      console.log(news);
-      res.json(news); //NON FUNZIONA
-    })
-    .catch(next);
-});*/
 
 function escapeRegex(text) {
   return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
@@ -42,32 +29,26 @@ function escapeRegex(text) {
 
 app.get("/news", (req, res, next) => {
   let { search = "", skip = 0, limit = 5, sort = "desc" } = req.query; //acquisisto i valori passati come parametri tramite res.query
-  const regex = new RegExp(escapeRegex(search), "gi");
-
+  const regex = new RegExp(search);//(escapeRegex(search), "gi");
   skip = parseInt(skip) || 0;
   limit = parseInt(limit) || 5;
 
   skip = skip < 0 ? 0 : skip;
   limit = Math.min(50, Math.max(1, limit)); // se limit<1 imposta a 1, se limit>50 imposta a 50
-eval(require('locus'));
-  Promise.all([
-    //uso una promise per fare entrambe le query insieme
-    newsFeed.count(),
     newsFeed.find(
       {
-        $or: [{ titolo: regex }, { testo: regex }], //NON FUNZIONA LA RICERCA
+        $or: [{ titolo: regex }, { testo: regex }]
       },
       {
         skip,
-        limit,
+        limit, 
         sort: {
-          data: sort === "desc" ? -1 : 1,
-        },
+          data: sort === "desc" ? -1 : 1
+        }
       }
-    ),
-  ])
-    .then(([total, news]) => {
-      console.log(news);
+    )
+    .then((news) => {
+      const total=news.length;
       res.json({
         //risposta al server
         news,
@@ -84,18 +65,17 @@ eval(require('locus'));
 
 function isValidNews(news) {
   return (
-    news.name &&
-    news.name.toString().trim() !== "" &&
-    news.name.toString().trim().length <= 70 &&
-    news.content &&
-    news.content.toString().trim() !== "" &&
-    news.content.toString().trim().length <= 400
+    news.titolo &&
+    news.titolo.toString().trim() !== "" &&
+    news.titolo.toString().trim().length <= 70 &&
+    news.testo &&
+    news.testo.toString().trim() !== "" &&
+    news.testo.toString().trim().length <= 400
   );
 }
 
 const createNews = (req, res, next) => {
   if (isValidNews(req.body)) {
-    console.log(req.body);
     const comunicazione = {
       titolo: req.body.titolo.toString().trim(),
       testo: req.body.testo.toString().trim(),
@@ -121,7 +101,6 @@ app.post("/news", createNews);
 //app.post("/v2/news", createNews);
 
 app.use((error, req, res, next) => {
-  console.log('Error: '+error.message);
   res.status(500);
   res.json({
     message: error.message,

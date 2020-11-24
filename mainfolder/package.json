@@ -24,6 +24,7 @@
     "monk": "^7.3.2"
   },
   "devDependencies": {
+    "locus": "^2.0.4",
     "nodemon": "^2.0.6"
   }
 }
