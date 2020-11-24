@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/Vinziman/HAP#readme",
   "dependencies": {
+    "bad-words": "^3.0.4",
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "monk": "^7.3.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
