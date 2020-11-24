@@ -1,0 +1,2 @@
+- loading element news
+- validazione news nel server index.js

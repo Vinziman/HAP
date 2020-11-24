@@ -1,7 +1,6 @@
 const newsContainerElement = document.querySelector(".newsContainer");
-const form = document.querySelector("form"); // grabbing an element on the page
+const form = document.querySelector("#cercaNewsForm");
 const errorElement = document.querySelector(".error-message");
-
 const loadMoreElement = document.querySelector("#loadMore");
 const getNewsAPI_URL = "http://localhost:5000/news";
 
@@ -45,7 +44,7 @@ form.addEventListener("submit", (event) => {
       form.style.display = "";
       errorElement.textContent = errorMessage;
       errorElement.style.display = "";
-      loadingElement.style.display = "none";
+      //loadingElement.style.display = "none";
     });
 });
 

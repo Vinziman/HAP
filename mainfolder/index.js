@@ -24,7 +24,9 @@ app.get("/", (req, res) => {
   });
 });
 
-/*app.get("/news", (req, res, next) => {
+/*
+getNews v1
+app.get("/news", (req, res, next) => {
   newsFeed
     .find()
     .then((news) => {
@@ -77,34 +79,35 @@ function isValidNews(news) {
   return (
     news.name &&
     news.name.toString().trim() !== "" &&
-    news.name.toString().trim().length <= 50 &&
+    news.name.toString().trim().length <= 70 &&
     news.content &&
     news.content.toString().trim() !== "" &&
-    news.content.toString().trim().length <= 140
+    news.content.toString().trim().length <= 400
   );
 }
 
 const createNews = (req, res, next) => {
-  //if (isValidNews(req.body)) {
-  console.log(req.body);
-  const comunicazione = {
-    titolo: req.body.titolo.toString().trim(),
-    testo: req.body.testo.toString().trim(),
-    data: new Date(),
-  };
-  newsFeed
-    .insert(comunicazione)
-    .then((createdNews) => {
-      res.json(createdNews);
-    })
-    .catch(next);
-  /*} else {
+  if (isValidNews(req.body)) {
+    console.log(req.body);
+    const comunicazione = {
+      titolo: req.body.titolo.toString().trim(),
+      testo: req.body.testo.toString().trim(),
+      data: new Date(),
+    };
+
+    newsFeed
+      .insert(comunicazione)
+      .then((createdNews) => {
+        res.json(createdNews);
+      })
+      .catch(next);
+  } else {
     res.status(422);
     res.json({
       message:
-        "Hey! Name and Content are required! Name cannot be longer than 50 characters. Content cannot be longer than 140 characters.",
+        "Hey! Name and Content are required! Name cannot be longer than 70 characters. Content cannot be longer than 400 characters.",
     });
-  }*/
+  }
 };
 
 app.post("/news", createNews);

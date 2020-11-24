@@ -1,5 +1,5 @@
 const newsContainerElement = document.querySelector(".newsContainer");
-const form = document.querySelector("form"); // grabbing an element on the page
+const form = document.querySelector("#aggiungiNews");
 const errorElement = document.querySelector(".error-message");
 const loadMoreElement = document.querySelector("#loadMore");
 const getNewsAPI_URL = "http://localhost:5000/news";
@@ -50,13 +50,13 @@ form.addEventListener("submit", (event) => {
       setTimeout(() => {
         form.style.display = "";
       }, 2000);
-    });
-  /*.catch((errorMessage) => {
+    })
+    .catch((errorMessage) => {
       form.style.display = "";
       errorElement.textContent = errorMessage;
       errorElement.style.display = "";
-      loadingElement.style.display = "none";
-    });*/
+      //loadingElement.style.display = "none";
+    });
 });
 
 function loadMore() {
