@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/news", (req, res, next) => {
+/*app.get("/news", (req, res, next) => {
   newsFeed
     .find()
     .then((news) => {
@@ -32,39 +32,41 @@ app.get("/news", (req, res, next) => {
       res.json(news); //NON FUNZIONA
     })
     .catch(next);
-});
+});*/
 
-/*app.get("/v2/news", (req, res, next) => {
-  // let skip = Number(req.query.skip) || 0;
-  // let limit = Number(req.query.limit) || 10;
-  let { skip = 0, limit = 5, sort = "desc" } = req.query;
+app.get("/news", (req, res, next) => {
+  //let skip = Number(req.query.skip) || 0;
+  //let limit = Number(req.query.limit) || 10;
+  let { skip = 0, limit = 5, sort = "desc" } = req.query; //acquisisto i valori passati come parametri tramite res.query
   skip = parseInt(skip) || 0;
   limit = parseInt(limit) || 5;
 
   skip = skip < 0 ? 0 : skip;
-  limit = Math.min(50, Math.max(1, limit));
+  limit = Math.min(50, Math.max(1, limit)); // se limit<1 imposta a 1, se limit>50 imposta a 50
 
   Promise.all([
-    news.count(),
-    news.find(
-      {},
+    //uso una promise per fare entrambe le query insieme
+    newsFeed.count(),
+    newsFeed.find(
+      {}, //query
       {
         skip,
         limit,
         sort: {
-          created: sort === "desc" ? -1 : 1,
+          data: sort === "desc" ? -1 : 1,
         },
       }
     ),
   ])
     .then(([total, news]) => {
       res.json({
+        //risposta al server
         news,
         meta: {
           total,
           skip,
           limit,
-          has_more: total - (skip + limit) > 0,
+          has_more: total - (skip + limit) > 0, //true se ce ne sono ancora, false altrimenti
         },
       });
     })
@@ -80,10 +82,11 @@ function isValidNews(news) {
     news.content.toString().trim() !== "" &&
     news.content.toString().trim().length <= 140
   );
-}*/
+}
 
 const createNews = (req, res, next) => {
   //if (isValidNews(req.body)) {
+  console.log(req.body);
   const comunicazione = {
     titolo: req.body.titolo.toString().trim(),
     testo: req.body.testo.toString().trim(),

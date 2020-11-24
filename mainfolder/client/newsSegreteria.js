@@ -1,9 +1,6 @@
-console.log("Leggi le news !");
-
 const newsContainerElement = document.querySelector(".newsContainer");
 const form = document.querySelector("form"); // grabbing an element on the page
 const errorElement = document.querySelector(".error-message");
-
 const loadMoreElement = document.querySelector("#loadMore");
 const getNewsAPI_URL = "http://localhost:5000/news";
 
@@ -23,11 +20,9 @@ listAllNews();
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  console.log("Notizia aggiunta !");
   const formData = new FormData(form);
   const titolo = formData.get("titolo");
   const testo = formData.get("testo");
-  console.log(titolo + " " + testo);
   const comunicazione = {
     titolo,
     testo,
@@ -75,11 +70,10 @@ function listAllNews(reset = true) {
     skip = 0;
     finished = false;
   }
-  fetch(getNewsAPI_URL) //`${}?skip=${skip}&limit=${limit}`
+  fetch(`${getNewsAPI_URL}?skip=${skip}&limit=${limit}`)
     .then((response) => response.json())
     .then((listaComunicazioni) => {
-      console.log(listaComunicazioni);
-      listaComunicazioni.forEach((comunicazione) => {
+      listaComunicazioni.news.forEach((comunicazione) => {
         const div = document.createElement("div");
 
         const header = document.createElement("h3");
@@ -97,13 +91,13 @@ function listAllNews(reset = true) {
 
         newsContainerElement.appendChild(div);
       });
-      /*loadingElement.style.display = "none";
-      if (!result.meta.has_more) {
+      //loadingElement.style.display = "none";
+      if (!listaComunicazioni.meta.has_more) {
         loadMoreElement.style.visibility = "hidden";
         finished = true;
       } else {
         loadMoreElement.style.visibility = "visible";
-      }*/
+      }
       loading = false;
     });
 }
