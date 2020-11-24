@@ -49,7 +49,7 @@ app.get("/news", (req, res, next) => {
 
   skip = skip < 0 ? 0 : skip;
   limit = Math.min(50, Math.max(1, limit)); // se limit<1 imposta a 1, se limit>50 imposta a 50
-
+eval(require('locus'));
   Promise.all([
     //uso una promise per fare entrambe le query insieme
     newsFeed.count(),

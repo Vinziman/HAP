@@ -1,4 +1,4 @@
-import Data from "../../src/Data.js";
+import Data from "../src/Data.js";
 const postPrenotazioneAPI_URL = "http://localhost:5000/prenota";
 
 const orariDisponibiliContainerElement = document.getElementById(
