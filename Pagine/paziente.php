@@ -28,6 +28,12 @@
             <li><button id="bottone">Chat</button></li>
             <br /><br />
             <li><button id="bottone">Prenotazione</button></li>
+            <?php
+             <div id="login">
+            
+        
+      </div>
+            ?>
             <br /><br />
             <li><button id="bottone">Calendario prenotazioni</button></li>
           </ul>
