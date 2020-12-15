@@ -65,32 +65,30 @@ body {
   position: absolute;
   left: 3%;
   top: 15%;
-  width: 22%;
-  height: 5%;
-  border: 3px solid;
+  width: 24%;
+  /*height: 5%;*/
+  border: none;
   border-top-right-radius: 40px;
   border-bottom-right-radius: 40px;
   border-top-left-radius: 40px;
   border-bottom-left-radius: 40px;
-  font-size: 28;
+  font-size: 40;
   font-weight: bold;
   text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1);
 }
 #opzioni{
   position: absolute;
   top:23%;
   left:3%;
   width: 25%;
-  height: 60%;
 }
 #opzioni button{
   background-color: white;
   position: absolute;
   left: 4%;
-  /*top: 23%;*/
-  width: 22%;
-  height: 5%;
-  border: 3px solid;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+  border: none;
   border-top-right-radius: 40px;
   border-bottom-right-radius: 40px;
   border-top-left-radius: 40px;
