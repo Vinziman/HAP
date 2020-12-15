@@ -7,38 +7,21 @@
   <body>
     <div id="title">HAP</div>
     <a href="">
-      <div id="profilo">
+      <div class="profilo">
         <img src="../Immagini/avatar.png" />
-        <div id="info">
-          Nome
-          <br />
-          Cognome
-        </div>
       </div>
     </a>
-    <input type="submit" id="bottone_scrivi" value="Scrivi" />
-    <div id="menu">
-      <ul id="riga">
-        <li>
-          <img src="../Icone/2x/round_menu_black_18dp.png" />
-          <ul id="submenu">
-            <br /><br />
-            <li><button id="bottone">News</button></li>
-            <br /><br />
-            <li><button id="bottone">Chat</button></li>
-            <br /><br />
-            <li><button id="bottone">Prenotazione</button></li>
-            <br /><br />
-            <li><button id="bottone">Calendario prenotazioni</button></li>
-          </ul>
-        </li>
-      </ul>
+    <center> <input type="text" id="cerca" placeholder="   Cerca news" /></center>
+   
+    <div id="bottone_scrivi"><button>Scrivi</button></div>
+    <div id="opzioni">
+      <button>Notizie</button><br><br><br><br><br>
+      <button>Chat</button><br><br><br><br><br>
+      <button>Effatua prenotazione</button><br><br><br><br><br>
+      <button>Calendario Prenotazioni</button>
     </div>
-    <input type="text" placeholder="   Cerca news" />
-    <div class="area_notifiche">
-      <div id="bacheca"></div>
-    </div>
-    <p>Impostazioni</p>
+    
+    <div id="bottone"><button>Esci</button></div>
     <script src="vediNews.js"></script>
     <script src="Chat.js"></script>
     <script src="Prenota.js"></script>

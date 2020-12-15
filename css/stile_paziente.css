@@ -1,80 +1,107 @@
 body {
   background-size: cover;
-  background: linear-gradient(to left, rgba(0, 196, 204), white);
+  background: rgba(0, 196, 204);
+  background-image: url(../Immagini/HapHD.png);
+  background-position: center;
   background-repeat: no-repeat;
   font-family: arial;
   height: 100%;
   width: 100%;
   right: 0;
 }
-.area_notifiche {
+#cerca input [type="password"], [type="text"] {
   position: absolute;
-  right: 0;
-  top: 150px;
-  border-top-left-radius: 10px;
-  width: 75%;
-  bottom: 0;
-  background: white;
-  box-shadow: 0 0 -10px rgba(0, 0, 0, 1);
-}
-input[type="text"] {
-  position: absolute;
-  top: 50px;
-  left: 35%;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  top: 3%;
+  left:25%;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
   border-color: rgba(192, 192, 192);
   font-size: 17;
-  width: 32%;
+  width: 50%;
   height: 45px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 1);
 }
 #title {
   position: absolute;
-  right: 35px;
-  top: 35px;
+  right: 4%;
+  top: 2%;
   font-size: 65;
   font-weight: bold;
   color: rgba(255, 255, 255);
   text-shadow: 0 0 10px rgba(0, 0, 0, 1);
 }
-#profilo {
+.profilo {
   position: absolute;
+  top:1%;
   width: 200px;
   height: 130px;
 }
 
-#profilo img {
+.profilo img {
   position: absolute;
-  top: 1%;
-  left: 60px;
+  top: 5%;
+  left:28%;
   width: 90px;
   height: 90px;
-  border-top-right-radius: 10px;
+  /*border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 10px;*/
+  border-radius: 50px;
 }
 #info {
   position: absolute;
-  top: 20%;
-  left: 170px;
+  top: 60%;
+  left:60%;
   font-size: 20;
 }
-#bottone_scrivi {
+#bottone_scrivi button{
+  background-color: white;
+  background-image:url(../Immagini/scrivi.png);
+  background-size: contain;
+  background-repeat: no-repeat;
   position: absolute;
-  /* right: 200px;*/
-  left: 4%;
-  top: 17%;
-  width: 180px;
-  height: 50px;
+  left: 3%;
+  top: 15%;
+  width: 22%;
+  height: 5%;
   border: 3px solid;
-  border-top-right-radius: 25px;
-  border-bottom-right-radius: 25px;
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  font-size: 28;
+  font-weight: bold;
+  text-align: center;
+}
+#opzioni{
+  position: absolute;
+  top:23%;
+  left:3%;
+  width: 25%;
+  height: 60%;
+}
+#opzioni button{
+  background-color: white;
+  position: absolute;
+  left: 4%;
+  /*top: 23%;*/
+  width: 22%;
+  height: 5%;
+  border: 3px solid;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  font-size: 28;
+  font-weight: bold;
+  text-align: center;
+}
+#bottone button{
+  border-style: none;
+  background: transparent;
 }
 #bacheca {
   position: absolute;
@@ -93,11 +120,13 @@ input[type="text"] {
   font-size: 24;
   display: block;
 }
-p {
+#bottone button {
   position: absolute;
-  bottom: 0.5%;
-  left: 75px;
-  font-size: 24;
+  bottom:.3%;
+  left: 4%;
+  font-size: 30;
+  font-weight: bold;
+  color:white;
 }
 #riga {
   position: absolute;
