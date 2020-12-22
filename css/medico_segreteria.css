@@ -19,6 +19,16 @@ body {
   background: white;
   box-shadow: 0 0 -10px rgba(0, 0, 0, 1);
 }
+#bacheca {
+  position: absolute;
+  overflow-y: scroll;
+  background: rgba(255, 255, 255);
+  border-top-left-radius: 15px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+}
 .alto{
   position:absolute;
   top: 0;
@@ -80,14 +90,6 @@ input[type="text"] {
   width: 120px;
   height: 90px;
 }
-#bacheca {
-  position: absolute;
-  overflow-y: scroll;
-  top: 0;
-  left: 0;
-  width: 1200px;
-  bottom: 0;
-}
 #bottone_scrivi button{
   background-color: white;
   background-image:url(../Immagini/scrivi.png);
@@ -131,14 +133,7 @@ input[type="text"] {
   border-style: none;
   background: transparent;
 }
-#bacheca {
-  position: absolute;
-  overflow-y: scroll;
-  top: 0;
-  left: 0;
-  width: 100%;
-  bottom: 0;
-}
+
 #bottone button {
   position: absolute;
   bottom:.3%;

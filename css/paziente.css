@@ -11,7 +11,7 @@ body {
 }
 #cerca input [type="password"], [type="text"] {
   position:absolute;
-  margin-top: 2.6%;
+  margin-top: 2.3%;
   left:25%;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -111,4 +111,24 @@ body {
   font-size: 30;
   font-weight: bold;
   color:white;
+}
+.area_notifiche {
+  position: absolute;
+  right: 0;
+  top: 150px;
+  border-top-left-radius: 10px;
+  width: 70%;
+  bottom: 0;
+  background: white;
+  box-shadow: 0 0 -10px rgba(0, 0, 0, 1);
+}
+#bacheca {
+  position: absolute;
+  overflow-y: scroll;
+  background: rgba(255, 255, 255);
+  border-top-left-radius: 15px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  bottom: 0;
 }
