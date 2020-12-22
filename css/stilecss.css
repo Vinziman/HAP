@@ -1,18 +1,29 @@
 body {
   background-size: cover;
-  background: linear-gradient(to left, rgba(0, 196, 204), white);
+  background: rgba(0, 196, 204);
+  background-image: url(../Immagini/HapHD.png);
+  background-position: center;
+  background-repeat: no-repeat;
   font-family: arial;
-  height: 700px;
+  height: 100%;
+  width: 100%;
+  right: 0;
 }
 .area_notifiche {
   position: absolute;
   right: 0;
   top: 150px;
   border-top-left-radius: 10px;
-  width: 75%;
+  width: 70%;
   bottom: 0;
   background: white;
   box-shadow: 0 0 -10px rgba(0, 0, 0, 1);
+}
+.alto{
+  position:absolute;
+  top: 0;
+  left:0;
+  right:0;
 }
 input[type="text"] {
   position: absolute;
@@ -31,47 +42,32 @@ input[type="text"] {
 }
 #title {
   position: absolute;
-  right: 35px;
-  top: 35px;
+  right: 3%;
+  margin-top: 1.5%;
   font-size: 65;
   font-weight: bold;
   color: rgba(255, 255, 255);
   text-shadow: 0 0 10px rgba(0, 0, 0, 1);
 }
-#profilo {
+.profilo {
   position: absolute;
   width: 200px;
   height: 130px;
+  top:1%
 }
-#profilo img {
+.profilo img {
   position: absolute;
-  top: 10px;
-  left: 60px;
+  top: 5%;
+  left:28%;
   width: 90px;
   height: 90px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-radius: 50px;
 }
 #info {
   position: absolute;
   top: 50px;
   left: 170px;
   font-size: 20;
-}
-#bottone_scrivi {
-  position: absolute;
-  /* right: 200px;*/
-  left: 90px;
-  top: 155px;
-  width: 180px;
-  height: 50px;
-  border: 3px solid;
-  border-top-right-radius: 25px;
-  border-bottom-right-radius: 25px;
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
 }
 #icone {
   position: absolute;
@@ -92,36 +88,62 @@ input[type="text"] {
   width: 1200px;
   bottom: 0;
 }
-#menu {
+#bottone_scrivi button{
+  background-color: white;
+  background-image:url(../Immagini/scrivi.png);
+  background-size: contain;
+  background-repeat: no-repeat;
   position: absolute;
-  top: 200px;
-  left: 50px;
-  width: 320px;
-  height: 520px;
-  font-size: 24;
-  display: block;
+  left: 3%;
+  top: 19%;
+  width: 24%;
+  border: none;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  font-size: 40;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1);
 }
-p {
+#opzioni{
   position: absolute;
-  bottom: 2px;
-  left: 75px;
-  font-size: 24;
+  top:35%;
+  left:3%;
+  width: 25%;
 }
-#riga {
+#opzioni button{
+  background-color: white;
   position: absolute;
-  top: 10px;
-}
-#riga li {
-  display: block;
-  float: left;
+  left: 4%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+  border: none;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  font-size: 28;
+  font-weight: bold;
   text-align: center;
 }
-#riga li:hover {
-  cursor: pointer;
+#bottone button{
+  border-style: none;
+  background: transparent;
 }
-#submenu {
-  visibility: hidden;
+#bacheca {
+  position: absolute;
+  overflow-y: scroll;
+  top: 0;
+  left: 0;
+  width: 100%;
+  bottom: 0;
 }
-#menu li:hover #submenu {
-  visibility: visible;
+#bottone button {
+  position: absolute;
+  bottom:.3%;
+  left: 4%;
+  font-size: 30;
+  font-weight: bold;
+  color:white;
 }
